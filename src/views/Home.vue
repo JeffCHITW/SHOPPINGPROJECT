@@ -19,8 +19,8 @@
         <div class="col-lg-6 col-xs-12 shibuyahomepage_img">
           <img src="../assets/images/shibuyahomepage.png" class="img-fluid">
         </div>
-        </div>
       </div>
+    </div>
       <div class="container omotesnado_homepage">
         <div class="row">
           <div class="col-lg-6 col-xs-push-12 omotesnado_img">
@@ -45,7 +45,7 @@
           <div class="col-lg-6 col-xs-push-12 ginza_img">
             <img src="../assets/images/ginzahomepage.png" class="img-fluid ginzahomepage_img">
           </div>
-      </div>
+        </div>
     </div>
     <!--熱門推薦-->
     <div class="topsale_title">
@@ -165,11 +165,14 @@ body {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
+  padding-top: 100px;
 }
 
 * {
   margin: 0;
   padding: 0;
+  list-style-type: none;
+  text-decoration:none
 }
 
 .streetstyle_title {
@@ -465,18 +468,6 @@ max-width: 100%;
 }
 
 .service1 {
-  padding: 30px 0;
-}
-
-.service2 {
-  padding: 30px 0;
-}
-
-.service3 {
-  padding: 30px 0;
-}
-
-.service4 {
   padding: 30px 0;
 }
 

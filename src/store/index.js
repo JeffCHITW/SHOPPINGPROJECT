@@ -323,12 +323,185 @@ export default createStore({
           }
         ]
       }
-    ]
+    ],
+    streetstyledata: [
+      {
+        title:"原宿",
+        imgbanner: require('../assets/images/streetstyle/Harajuku01/locationbanner.png'),
+        menu:[
+          {
+            id:'Harajuku01',
+            img: require('../assets/images/streetstyle/Harajuku01/carousel01.png'),
+            categoryTitle:'Harajuku',
+            name:'Rina',
+            job:'美髮設計師',
+            height:'168cm',
+            itembrand: [
+              { brand:'Beams' },
+              { brand:'NauticaJP' },
+              { brand:'Urban Research' },
+            ],
+            favritebrand: [
+              { brand:'Beams' },
+              { brand:'Urban Research' },
+            ]
+          },
+          {
+            id:'Harajuku02',
+            img: require('../assets/images/streetstyle/Harajuku02/carousel01.png'),
+            categoryTitle:'Harajuku',
+            name:'WWW',
+            job:'美髮設計師',
+            height:'166cm',
+            itembrand: [
+              { brand:'Beams' },
+              { brand:'NauticaJP' },
+              { brand:'Urban Research' },
+            ],
+            favritebrand: [
+              { brand:'Beams' },
+              { brand:'Urban Research' },
+            ]
+          },
+          {
+            id:'Harajuku03',
+            img: require('../assets/images/streetstyle/Harajuku03/carousel01.png'),
+            categoryTitle:'Harajuku',
+            name:'RRR',
+            job:'美髮設計師',
+            height:'158cm',
+            itembrand: [
+              { brand:'Beams' },
+              { brand:'NauticaJP' },
+              { brand:'Urban Research' }
+            ],
+            favritebrand: [
+              { brand:'Beams' },
+              { brand:'Urban Research' }
+            ]
+          },
+        ]
+      },
+      {
+        title:"表參道",
+        imgbanner: require('../assets/images/streetstyle/Omotesando01/locationbanner.png'),
+        menu: [
+          {
+            id:'Omotesando01',
+            img: require('../assets/images/streetstyle/Omotesando01/carousel01.png'),
+            categoryTitle:'Omotesando',
+            name:'AAA',
+            job:'美髮設計師',
+            height:'168cm',
+            itembrand: [
+              { brand:"Beams" },
+              { brand:"NauticaJP" },
+              { brand:"Urban Research" },
+            ],
+            favritebrand: [
+              { brand:'Beams' },
+              { brand:'Urban Research' },
+            ]
+          },
+          {
+            id:'Omotesando02',
+            img: require('../assets/images/streetstyle/Omotesando02/carousel01.png'),
+            categoryTitle:'Omotesando',
+            name:'BBB',
+            job:'美髮設計師',
+            height:'168cm',
+            itembrand: [
+              { brand:'Beams' },
+              { brand:'NauticaJP' },
+              { brand:'Urban Research' }
+            ],
+            favritebrand: [
+              { brand:'Beams' },
+              { brand:'Urban Research' }
+            ]
+          },
+          {
+            id:'Omotesando03',
+            img: require('../assets/images/streetstyle/Omotesando03/carousel01.png'),
+            categoryTitle:'Omotesando',
+            name:'CCC',
+            job:'美髮設計師',
+            height:'168cm',
+            itembrand: [
+              { brand:'Beams' },
+              { brand:'NauticaJP' },
+              { brand:'Urban Research' }
+            ],
+            favritebrand: [
+              { brand:'Beams' },
+              { brand:'Urban Research' }
+            ]
+          },
+        ]
+      },  
+      {
+        title:"澀谷",
+        imgbanner: require('../assets/images/streetstyle/shibuya01/locationbanner.png'),
+        menu: [
+          {
+            id:'shibuya01',
+            img: require('../assets/images/streetstyle/shibuya01/carousel01.png'),
+            categoryTitle:'shibuya',
+            name:'DDD',
+            job:'美髮設計師',
+            height:'168cm',
+            itembrand: [
+              { brand:'Beams' },
+              { brand:'NauticaJP' },
+              { brand:'Urban Research' }
+            ],
+            favritebrand: [
+              { brand:'Beams' },
+              { brand:'Urban Research' }
+            ]
+          },
+          {
+            id:'shibuya02',
+            img: require('../assets/images/streetstyle/shibuya02/carousel01.png'),
+            categoryTitle:'shibuya',
+            name:'EEE',
+            job:'美髮設計師',
+            height:'168cm',
+            itembrand: [
+              { brand:'Beams' },
+              { brand:'NauticaJP' },
+              { brand:'Urban Research' }
+            ],
+            favritebrand: [
+              { brand:'Beams' },
+              { brand:'Urban Research' }
+            ]
+          },
+          {
+            id:'shibuya03',
+            img: require('../assets/images/streetstyle/shibuya03/carousel01.png'),
+            categoryTitle:'shibuya',
+            name:'FFF',
+            job:'美髮設計師',
+            height:'168cm',
+            itembrand: [
+              { brand:'Beams' },
+              { brand:'NauticaJP' },
+              { brand:'Urban Research' }
+            ],
+            favritebrand: [
+              { brand:'Beams' },
+              { brand:'Urban Research' }
+            ]
+          }
+        ]
+      }
+    ],
+    newStreetStyleData: {}
   },
 
   mutations: {
     setStateProductData(state, payload) {
-      // console.log("mutations", payload)
       state.nowProductData = payload;
     },
     setStateShopCartData(state, payload) { //payload是commit帶進來的值。
@@ -344,6 +517,9 @@ export default createStore({
     },
     setStateshopInformationData(state, payload) {
       state.shopInformationData = payload;
+    },
+    setStateStreetStyleData(state, payload) {
+      state.newStreetStyleData = payload;
     }
   },
   
@@ -360,12 +536,10 @@ export default createStore({
     },
     saveshopInformationData({ commit, state}, value) {
       commit('setStateshopInformationData', value)
-    }
+    },
+    saveStateStreetStyleData({commit, state}, value) {
+      commit('setStateStreetStyleData', value)
+    },
   },
-  
-  getters: {
-    gettershopInformationData: state => {
-      return state.shopInformationData;
-    }
-  }
+
 })

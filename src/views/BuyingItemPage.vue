@@ -105,7 +105,6 @@ export default {
     return {
       data: {},
       imgData: {
-        img01: "",
       },
       productItemIntroduction: 'one',
       alertPlaceholder: null,
@@ -186,6 +185,7 @@ body {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
+  padding-top: 100px;
 }
 
 * {

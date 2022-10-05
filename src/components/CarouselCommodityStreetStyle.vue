@@ -12,7 +12,7 @@
     :autoplay="{ delay: 3000, disableOnInteraction: false }"
     :speed="1200"
   >
-    <swiper-slide  v-for="item in 5" :key="item" ><img :src="require(`../assets/images/productlist/${nowProductData.category}/${nowProductData.id}/carousel0${item}.png`)" /></swiper-slide>
+    <swiper-slide  v-for="item in 5" :key="item" ><img :src="require(`../assets/images/streetstyle/${newStreetStyleData.id}/carousel0${item}.png`)" /></swiper-slide>
   </swiper>
   <swiper
     @swiper="setThumbsSwiper"
@@ -23,7 +23,7 @@
     :modules="modules"
     class="carouselCommoditySwiperContent"
   >
-    <swiper-slide  v-for="item in 5" :key="item" ><img :src="require(`../assets/images/productlist/${nowProductData.category}/${nowProductData.id}/carousel0${item}.png`)" /></swiper-slide>
+    <swiper-slide  v-for="item in 5" :key="item" ><img :src="require(`../assets/images/streetstyle/${newStreetStyleData.id}/carousel0${item}.png`)" /></swiper-slide>
   </swiper>
 </template>
 
@@ -36,9 +36,8 @@ import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/thumbs/thumbs.min.css'
 import 'swiper/modules/scrollbar/scrollbar.min.css'
 import { ref } from '@vue/reactivity'
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
 import 'swiper/modules/autoplay/autoplay.min.css'
-
 
 
 export default {
@@ -62,8 +61,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(['nowProductData'])
-  },
+    ...mapState(['newStreetStyleData'])
+  }
 }
 </script>
 

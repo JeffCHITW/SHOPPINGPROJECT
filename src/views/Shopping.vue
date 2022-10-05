@@ -12,13 +12,13 @@
       <div class="col-12 col-lg-2 col-xs-12 menu-wrapper">
         <div class="allproduct_container">
           <div class="d-none d-sm-block allproduct_title">全部商品</div>
-            <ul class="">
+            <ul class="d-flex flex-wrap flex-md-nowrap d-xl-block">
               <li class="category_productitem">
                 <p @click="clickProductData('全部商品')">全部商品</p>
               </li>
             </ul>
           <div class="d-none d-sm-block category_title">商品分類</div>
-            <ul class="">
+            <ul class="d-flex justify-content-between d-xl-block">
               <li class="category_productitem">
                 <p @click="clickProductData('上衣')">上衣</p>
               </li>
@@ -195,12 +195,11 @@ export default {
                   designtitle: "人氣的URD LOGO裝飾，基本百搭的6分割棒球帽。日常穿搭、戶外活動都好用。",
                   materialtitle: "※商品照片可能因打光、電腦等顯示器、觀看環境不同，與實品顏色有所差異，請以實際顏色為準。",
                   productcolorsize: [
-                    { color:"綠色", size: "one size", length: 49, width: 10, thickness: 7, num:0, img:'green.png', id:'01'},
-                    { color:"黑色", size: "one size", length: 49, width: 10, thickness: 7, num:0, img:'black.png', id:'02'},
+                    { color:"綠色", size: "one size", shoulderlength: 49, clotheslength: 10, thickness: 7, num:0, img:'green.png', id:'01'},
+                    { color:"黑色", size: "one size", shoulderlength: 49, clotheslength: 10, thickness: 7, num:0, img:'black.png', id:'02'},
                   ],
                 },
                 { 
-                  title: '配件',
                   id: 'Accessories02',
                   img: require('../assets/images/productlist/Accessories/Accessories02/carousel01.png'),
                   category: "Accessories",
@@ -209,8 +208,8 @@ export default {
                   productName: 'EKAL 網眼套餐',
                   designtitle: "用於戶外活動的網布包裹。看似小技巧，實則威力無窮。精選輕質網眼材質，非常適合夏天。內層面料設計，適合日常使用。外帶掛環設計，可調節上部金屬鉤環，外形增加了額外的額外活動元素。也有同系列的大件送貨包。",
                   productcolorsize: [
-                    { color:"灰色", size: "one size", length: 24, width: 18.5, thickness: 17.5, num:0, img:'grey.png', id:'01'},
-                    { color:"棕色", size: "one size", length: 24, width: 18.5, thickness: 17.5, num:0, img:'green.png', id:'02'},
+                    { color:"灰色", size: "one size", shoulderlength: 24, clotheslength: 18.5, thickness: 17.5, num:0, img:'grey.png', id:'01'},
+                    { color:"棕色", size: "one size", shoulderlength: 24, clotheslength: 18.5, thickness: 17.5, num:0, img:'green.png', id:'02'},
                   ],
                 },
               ]
@@ -357,8 +356,8 @@ export default {
                   designtitle: "人氣的URD LOGO裝飾，基本百搭的6分割棒球帽。日常穿搭、戶外活動都好用。",
                   materialtitle: "※商品照片可能因打光、電腦等顯示器、觀看環境不同，與實品顏色有所差異，請以實際顏色為準。",
                   productcolorsize: [
-                    { color:"綠色", size: "one size", length: 49, width: 10, thickness: 7, num:0, img:'green.png', id:'01'},
-                    { color:"黑色", size: "one size", length: 49, width: 10, thickness: 7, num:0, img:'black.png', id:'02'},
+                    { color:"綠色", size: "one size", shoulderlength: 49, clotheslength: 10, chestlength: 7, num:0, img:'green.png', id:'01'},
+                    { color:"黑色", size: "one size", shoulderlength: 49, clotheslength: 10, chestlength: 7, num:0, img:'black.png', id:'02'},
                   ],
                 },
                 { 
@@ -370,8 +369,8 @@ export default {
                   productName: 'EKAL 網眼套餐',
                   designtitle: "用於戶外活動的網布包裹。看似小技巧，實則威力無窮。精選輕質網眼材質，非常適合夏天。內層面料設計，適合日常使用。外帶掛環設計，可調節上部金屬鉤環，外形增加了額外的額外活動元素。也有同系列的大件送貨包。",
                   productcolorsize: [
-                    { color:"灰色", size: "one size", length: 24, width: 18.5, thickness: 17.5, num:0, img:'grey.png', id:'01'},
-                    { color:"棕色", size: "one size", length: 24, width: 18.5, thickness: 17.5, num:0, img:'green.png', id:'02'},
+                    { color:"灰色", size: "one size", shoulderlength: 24, clotheslength: 18.5, chestlength: 17.5, num:0, img:'grey.png', id:'01'},
+                    { color:"棕色", size: "one size", shoulderlength: 24, clotheslength: 18.5, chestlength: 17.5, num:0, img:'green.png', id:'02'},
                   ],
                 },
               ]
@@ -421,6 +420,7 @@ body {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
+  padding-top: 100px;
 }
 
 * {
@@ -432,6 +432,7 @@ body {
 ul {
   padding-left: 0;
 }
+
   .allproduct_container {
     margin-bottom: 35px;
   }
@@ -442,10 +443,6 @@ ul {
 
   .category_title {
     font-size: 30px;
-  }
-
-  .category_productitem{
-    margin: 10px 0;
   }
 
   .product_list_img {

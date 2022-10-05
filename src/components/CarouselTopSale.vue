@@ -7,6 +7,9 @@
     }"
     :modules="modules"
     class="carouselTopSaleSwiper"
+    :loop="true"
+    :autoplay="{ delay: 3000, disableOnInteraction: false }"
+    :speed="1200"
   >
     <swiper-slide
       v-for="(item, index) in carouselTopSaleData"
@@ -26,7 +29,7 @@
 </template>
 
 <script>
-import { Pagination } from 'swiper'
+import { Pagination, Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js'
 import 'swiper/swiper.min.css'
 import 'swiper/modules/navigation/navigation.min.css'
@@ -34,6 +37,7 @@ import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/modules/scrollbar/scrollbar.min.css'
 import { reactive } from '@vue/reactivity'
 import { mapActions, mapState } from 'vuex'
+import 'swiper/modules/autoplay/autoplay.min.css'
 
 export default {
   name: 'CarouselTopSale',
@@ -183,25 +187,19 @@ export default {
   ])
 
     return {
-      modules: [Pagination],
+      modules: [Pagination, Autoplay],
       carouselTopSaleData
     }
   },
   methods: {
     ...mapActions(['saveProductData']),
-    goBuyProduct (product) {
+    goBuyProduct (item) {
       this.$router.push({ name: 'BuyingItemPage' });
       // console.log(product);
-      this.$store.dispatch("saveProductData", product);
+      this.$store.dispatch("saveProductData", item);
       // console.log(this.$store);
     },
   },
-  computed: {
-    ...mapState(['shopInformationData'])
-  },
-  created() {
-    console.log(this.shopInformationData)
-  }
 }
 </script>
 

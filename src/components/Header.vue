@@ -1,14 +1,12 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <div class="logo_contianer">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid py-3 px-5">
         <router-link to="/Home"><img src="../assets/images/logo.png" class="navbar-brand"></router-link>
-      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
             <router-link to="/StreetStyle"><p class="nav-link active">每日穿搭精選</p></router-link>
           </li>
@@ -16,22 +14,24 @@
             <router-link to="/Shopping"><p class="nav-link">商品購買</p></router-link>
           </li>
           <li class="nav-item">
-            <p class="nav-link">聯絡我們</p>
+            <router-link to="/ContactUs"><p class="nav-link">聯絡我們</p></router-link>
+          </li>
+          <li class="nav-item">
+            <div class="shopcarticon">
+              <router-link to="/ShopCart">
+                <span class="icontotalcount"> {{ getSumitem() }}</span>
+                <img src="../assets/images/shopping-cart.png">
+              </router-link>
+            </div>
           </li>
         </ul>
-      </div>
-      <div class="shopcarticon">
-        <router-link to="/ShopCart">
-          <span class="icontotalcount"> {{ getSumitem() }}</span>
-          <img src="../assets/images/shopping-cart.png">
-        </router-link>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex"
+import { mapState } from "vuex"
 
 export default {
   computed: {
@@ -50,19 +50,38 @@ export default {
 </script>
 
 <style scoped>
+  #app {
+  font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* text-align: center; */
+  color: #2c3e50;
+  background-image: "../assets/images/background.png";
+}
 
-.container-fluid {
-  height: 100px;
-  padding: 30px;
+body {
+  background-color: #EEEEEE;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration:none
 }
 
 #navbarNav{
   width: 70%;
-  justify-content: center;
+  justify-content: end;
 }
 .shopcarticon {
   box-sizing: border-box;
-  width: 15%;
+  width: 30px;
+  height: 30px;
 }
 
 .icontotalcount {
@@ -76,7 +95,7 @@ export default {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #bf7f5a;
+  background-color: #0047FF;
   color: #fff;
   box-shadow: -1px 1px 5px rgb(0 0 0 / 50%);
 }
@@ -89,4 +108,5 @@ export default {
 .shopcarticon a{
   position: relative;
 }
+
 </style>

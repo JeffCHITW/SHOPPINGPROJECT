@@ -59,6 +59,16 @@ const routes = [
     name: 'ShopCartFinalPage',
     component: () => import('../views/ShopCartFinalPage.vue')
   },
+  {
+    path: '/ContactUs',
+    name: 'ContactUs',
+    component: () => import('../views/ContactUs.vue')
+  },
+  {
+    path: '/StreetStyleInnerPage',
+    name: 'StreetStyleInnerPage',
+    component: () => import('../views/StreetStyleInnerPage.vue')
+  },
 ]
 const router = createRouter({
   history: createWebHashHistory(),
