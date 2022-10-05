@@ -165,7 +165,7 @@ body {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
-  padding-top: 100px;
+  padding-top: 70px;
 }
 
 * {
