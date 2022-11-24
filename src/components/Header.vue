@@ -94,7 +94,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 30%;
   background-color: #0047FF;
   color: #fff;
   box-shadow: -1px 1px 5px rgb(0 0 0 / 50%);
